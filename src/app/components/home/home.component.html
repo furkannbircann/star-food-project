@@ -1,0 +1,87 @@
+<div class="container mt-3">
+  <div class="row">
+    <div
+      class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start align-items-center align-items-md-start flex-column ">
+      <div class="text-center text-md-start">
+        <div class="header-info d-flex align-items-center justify-content-center justify-content-md-start"><img src="../../../assets/images/svg/tl-col-menu.svg" style="width: 16px;
+          height: 11px;" class="img-fluid">
+          <span>Accepted</span>
+        </div>
+        <div class="mt-4 header-btn">
+          <button type="button" class="btn btn-secondary mb-4 mb-md-0"><img
+              src="../../../assets/images/svg/tl-col-menu-2.svg" class="img-fluid" alt="">Showing 10 Orders</button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end align-items-center align-items-md-end flex-column flex-md-row ">
+      <div>
+        <button type="button" routerLink="/createorder" class="btn btn-primary ">Add New Order</button>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-12 mt-3" *ngFor="let order of ordersData ">
+      <div class="card">
+        <div class="row">
+          <div
+            class="card-body d-flex flex-row flex-wrap align-items-center justify-content-center text-center text-md-start">
+            <div class="col-6 col-md-2">
+              <h6 class="card-subtitle mb-2">Order Number</h6>
+              <p class="card-subtitle">{{'#' + order.id}}</p>
+            </div>
+            <div class="col-6 col-md-2">
+              <h6 class="card-subtitle mb-2">Date & Time</h6>
+              <p class="card-subtitle ">{{order.orderDate | date:'short'}}</p>
+            </div>
+            <div class="col-6 col-md-2">
+              <h6 class="card-subtitle mb-2 ">Name</h6>
+              <p class="card-subtitle">{{order.customerName}}</p>
+            </div>
+            <div class="col-6 col-md-2">
+              <h6 class="card-subtitle mb-2">Contact</h6>
+              <p class="card-subtitle">{{order.contact}}</p>
+            </div>
+            <div class="col-6 col-md-2">
+              <h6 class="card-subtitle mb-2 ">Trans Type</h6>
+              <p class="card-subtitle"><span class="badge text-bg-primary">{{order.transType}}</span>
+              </p>
+            </div>
+            <div class="col-6 col-md-2">
+              <h6 class="card-subtitle mb-2">Amount</h6>
+              <p class="card-subtitle ">{{order.amount | currency:'USD':true:'1.0-0'}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="card-body ordered-items d-flex flex-column flex-md-row justify-content-center align-items-center">
+            <div class="col-12 col-md-2 text-center">
+              <h6 class="card-subtitle">Ordered Items</h6>
+            </div>
+            <div
+              class="col-12 col-md-10 d-flex gap-3 flex-wrap justify-content-center justify-content-md-start  align-items-center">
+              <ng-container *ngFor="let i of order.orderedItems">
+                <span class="badge text-bg-secondary">{{i.foodName + ' X ' +
+                  i.quantity}}</span>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="card-body d-flex flex-column flex-md-row align-items-center">
+            <div class="col-12 col-md-6 text-center text-md-start ">
+              <h6 class="card-subtitle">Additional information from customer</h6>
+              <p>{{order.message}}</p>
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-end move-section">
+              <img src="../../../assets/images/svg/printer.svg" class="img-fluid" alt=""><button type="button"
+                class="btn btn-primary">Move to Cooking</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

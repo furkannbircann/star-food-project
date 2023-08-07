@@ -1,0 +1,87 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12 col-md-7">
+      <div class="row">
+        <div
+          class="col-12 col-md-6 mb-3 d-flex justify-content-center justify-content-md-start align-items-center align-items-md-start flex-column ">
+          <div class="text-center text-md-start">
+            <div class="header-info d-flex align-items-center justify-content-center justify-content-md-start"><img
+                src="../../../assets/images/svg/tl-col-menu.svg" style="width: 16px;
+              height: 11px;" class="img-fluid">
+              <span>Create Order</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="create-order-section">
+        <div class="row">
+          <div class="col-12 d-flex flex-column">
+            <div class="col-6">
+              <div class="order-info-title">
+                <p>{{"Order Number : "}}</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="order-info-title">
+                <p>{{"Date & Time : "}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row my-3">
+          <div class="col-12">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="col-12">
+            <label for="contact" class="form-label">Contact</label>
+            <input type="tel" class="form-control" id="contact">
+          </div>
+        </div>
+        <div class="row">
+          <div class="text-center text-md-start">
+            <label for="" class="form-label">Trans Type</label>
+          </div>
+          <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start">
+            <div class="form-check d-flex align-items-center">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="delivery" checked>
+              <label class="form-check-label" for="delivery">
+                Delivery
+              </label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start">
+            <div class="form-check d-flex align-items-center">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="takeaway">
+              <label class="form-check-label" for="takeaway">
+                Takeaway
+              </label>
+            </div>
+          </div>
+          <div class="col-12 my-3">
+            <label for="textarea" class="form-label">Message to Client</label>
+            <div class="form-floating">
+              <textarea class="form-control" id="textarea" style="height: 140px"></textarea>
+              <label for="textarea">Message</label>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-12 d-flex flex-column">
+            <label for="orderitems" class="form-label">Order Items</label>
+            <mat-form-field>
+              <mat-label>Pending</mat-label>
+              <mat-select  formControl="toppings" multiple [disableOptionCentering]="true" panelClass="selection-form">
+                <mat-option  *ngFor="let product of productsData" [value]="product.id">{{product.foodName}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-12">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-5">
+    </div>
+  </div>
+</div>

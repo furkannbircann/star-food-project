@@ -1,0 +1,54 @@
+/* Top Info */
+.header-btn button {
+  height: 50px;
+  border-radius: 5px 0px 0px 5px;
+  border: 1px solid #ebebeb;
+  background: var(--text-box-color, #ebebeb);
+  color: var(--primary-black, #171719);
+  font-family: SF Pro Display;
+  font-size: 18px;
+  font-weight: 500;
+}
+.header-btn button img {
+  margin-right: 15px;
+}
+.header-info img {
+  margin-right: 25px;
+}
+.header-info span {
+  color: var(--primary-black, #171719);
+  font-family: SF Pro Display;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.create-order-section {
+  border-right: 2px solid #ebebeb;
+  padding: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .create-order-section {
+    border-right: 0;
+    border-bottom: 2px solid #ebebeb;
+    padding: 0;
+  }
+}
+.create-order-section input.form-control {
+  margin: 13px 0px;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: 1.5px solid var(--dark-border, #ccc);
+  outline: none;
+}
+.create-order-section input.form-control:focus {
+  border: 1.5px solid var(--primary-blue, #000000);
+  outline: none;
+}
+.form-check {
+  margin: 20px 10px;
+}
+.form-check input {
+  margin-right: 20px;
+}
