@@ -1,4 +1,4 @@
-import { ProductModel } from "./product.model";
+import { CartItemModel } from "./cartItem.model";
 
 export class OrderModel {
   id!: number;
@@ -7,6 +7,6 @@ export class OrderModel {
   contact!:string;
   transType!: string;
   amount: number = 0;
-  orderedItems!: ProductModel[];
+  orderedItems!: CartItemModel[];
   message?: string = '';
 }

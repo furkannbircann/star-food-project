@@ -63,8 +63,7 @@
             <div
               class="col-12 col-md-10 d-flex gap-3 flex-wrap justify-content-center justify-content-md-start  align-items-center">
               <ng-container *ngFor="let i of order.orderedItems">
-                <span class="badge text-bg-secondary">{{i.foodName + ' X ' +
-                  i.quantity}}</span>
+                <span class="badge text-bg-secondary">{{i.product.foodName+ " X " +i.quantity}}</span>
               </ng-container>
             </div>
           </div>

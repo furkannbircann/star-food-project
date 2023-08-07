@@ -7,27 +7,25 @@
       "contact": "+90 5060665233",
       "transType": "Delivery",
       "amount": 84,
-      "orderedItems": [{
-        "id":1,
-        "foodName":"Beef Stroganoff",
-        "price":29,
-        "quantity":1
-      },
-      {
-        "id":2,
-        "foodName":"Caesar Salad",
-        "price":17,
-        "quantity":4
-      },
-      {
-        "id":3,
-        "foodName":"Chicken à la King",
-        "price":38,
-        "quantity":2
-      }
-    ],
+      "orderedItems": [
+        {
+          "product": {
+            "id": 1,
+            "foodName": "Beef Stroganoff",
+            "price": 23
+          },
+          "quantity": 2
+        },
+        {
+          "product": {
+            "id": 6,
+            "foodName": "Caesar Salad",
+            "price": 17
+          },
+          "quantity": 5
+        }
+      ],
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna id felis."
-
     },
     {
       "id": 2,
@@ -36,15 +34,17 @@
       "contact": "+90 5060665233",
       "transType": "Delivery",
       "amount": 84,
-      "orderedItems": [{
-        "id":1,
-        "foodName":"Beef Stroganoff",
-        "price":29,
-        "quantity":1
-      }
-    ],
+      "orderedItems": [
+        {
+          "product": {
+            "id": 1,
+            "foodName": "Beef Stroganoff",
+            "price": 23
+          },
+          "quantity": 1
+        }
+      ],
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna id felis."
-
     },
     {
       "id": 3,
@@ -53,21 +53,25 @@
       "contact": "+90 5060665233",
       "transType": "Delivery",
       "amount": 84,
-      "orderedItems": [{
-        "id":1,
-        "foodName":"Beef Stroganoff",
-        "price":29,
-        "quantity":1
-      },
-      {
-        "id":2,
-        "foodName":"Caesar Salad",
-        "price":17,
-        "quantity":4
-      }
-    ],
+      "orderedItems": [
+        {
+          "product": {
+            "id": 1,
+            "foodName": "Beef Stroganoff",
+            "price": 23
+          },
+          "quantity": 2
+        },
+        {
+          "product": {
+            "id": 2,
+            "foodName": "Reuben",
+            "price": 29
+          },
+          "quantity": 4
+        }
+      ],
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna id felis."
-
     },
     {
       "id": 4,
@@ -76,27 +80,33 @@
       "contact": "+90 5060665233",
       "transType": "Delivery",
       "amount": 84,
-      "orderedItems": [{
-        "id":1,
-        "foodName":"Beef Stroganoff",
-        "price":29,
-        "quantity":1
-      },
-      {
-        "id":2,
-        "foodName":"Caesar Salad",
-        "price":17,
-        "quantity":4
-      },
-      {
-        "id":3,
-        "foodName":"Chicken à la King",
-        "price":38,
-        "quantity":2
-      }
-    ],
+      "orderedItems": [
+        {
+          "product": {
+            "id": 1,
+            "foodName": "Beef Stroganoff",
+            "price": 23
+          },
+          "quantity": 2
+        },
+        {
+          "product": {
+            "id": 2,
+            "foodName": "Reuben",
+            "price": 29
+          },
+          "quantity": 3
+        },
+        {
+          "product": {
+            "id": 3,
+            "foodName": "Sandwich",
+            "price": 29
+          },
+          "quantity": 1
+        }
+      ],
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna id felis."
-
     }
   ],
   "products": [
@@ -108,7 +118,7 @@
     {
       "id": 2,
       "foodName": "Reuben",
-      "price": 29
+      "price": 23
     },
     {
       "id": 3,

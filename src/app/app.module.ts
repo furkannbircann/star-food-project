@@ -16,8 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BaseService } from './services/base.service';
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarMenuComponent } from './components/sidebar-menu/sidebar-menu.component';
-import { CreateOrderComponent } from './components/create-order/create-order.component';
+import { CreateOrderPageComponent } from './components/create-order-page/create-order-page.component';
 import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { MatSelectModule } from '@angular/material/select';
     HomeComponent,
     HeaderComponent,
     SidebarMenuComponent,
-    CreateOrderComponent,
+    CreateOrderPageComponent
   ],
   imports: [
     BrowserModule,
@@ -36,8 +37,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatButtonModule,
     HttpClientModule,
     MatSelectModule,
+    FormsModule
   ],
   providers: [BaseService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
