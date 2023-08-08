@@ -12,7 +12,10 @@
 body {
   position: relative;
 }
-
+html{
+  font-size: 18px !important;
+  font-weight: 500;
+}
 html,
 body,
 h1,
@@ -29,8 +32,9 @@ li {
   border: 0;
   font-family: "SF Pro Display", sans-serif !important;
   color: var(--primary-black, #171719);
-  font-size: 18px;
+  font-style: normal;
   font-weight: 500;
+  line-height: normal;
 }
 
 ul {

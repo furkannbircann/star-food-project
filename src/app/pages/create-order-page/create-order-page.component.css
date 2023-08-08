@@ -3,7 +3,7 @@
   height: 50px;
   border-radius: 5px 0px 0px 5px;
   border: 1px solid #ebebeb;
-  background: var(--text-box-color, #ebebeb);
+  background: #ebebeb;
   color: var(--primary-black, #171719);
   font-family: SF Pro Display;
   font-size: 18px;
@@ -16,7 +16,7 @@
   margin-right: 25px;
 }
 .header-info span {
-  color: var(--primary-black, #171719);
+  color: #171719;
   font-family: SF Pro Display;
   font-size: 30px;
   font-style: normal;
@@ -51,4 +51,7 @@
 }
 .form-check input {
   margin-right: 20px;
+}
+table.selected-items {
+  --bs-table-bg: var(--defaul-color);
 }

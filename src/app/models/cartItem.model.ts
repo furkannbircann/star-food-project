@@ -1,9 +1,6 @@
 import { ProductModel } from "./product.model";
 
 export class CartItemModel {
-    /**
-     *
-     */
     constructor(product: ProductModel) {
         this.product = product;
     }

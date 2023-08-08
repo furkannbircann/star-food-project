@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderModel } from 'src/app/models/order.model';
 import { OrderService } from 'src/app/services/order/order.service';
-import { FormControl } from '@angular/forms';
 import { ProductService } from 'src/app/services/product/product.service';
 import { ProductModel } from 'src/app/models/product.model';
 import { CartService } from 'src/app/services/cart/cart.service';
@@ -52,26 +51,10 @@ export class CreateOrderPageComponent implements OnInit {
 
   removeFromSelectedItems(productId: number) {
     let removeItemIndex = this.selectedItems.findIndex(p => p.id === productId)
+    // let removeItem = this.selectedItems.filter(p=> p.id === productId)
     if (removeItemIndex > -1) {
-      this.selectedItems.splice(removeItemIndex)
+      this.selectedItems.splice(removeItemIndex-1,removeItemIndex)
     }
     return this.selectedItems;
-  }
-
-
-
-  counterIncrease() {
-    this.clickCounter++;
-  }
-  counterReduce() {
-    if (this.clickCounter > 0) {
-      this.clickCounter--;
-    }
-    else if (this.clickCounter == 0) {
-      this.clickCounter = 0;
-    }
-    else{
-      this.clickCounter--;
-    }
   }
 }
