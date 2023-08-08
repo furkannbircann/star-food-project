@@ -1,112 +1,35 @@
 {
   "orders": [
     {
-      "id": 1,
-      "orderDate": "2018-12-10T13:45:00.000Z",
-      "customerName": "Furkan Bircan",
-      "contact": "+90 5060665233",
-      "transType": "Delivery",
-      "amount": 84,
-      "orderedItems": [
-        {
-          "product": {
-            "id": 1,
-            "foodName": "Beef Stroganoff",
-            "price": 23,
-            "quantity": 2
-          }
-        },
-        {
-          "product": {
-            "id": 6,
-            "foodName": "Caesar Salad",
-            "price": 17,
-            "quantity": 5
-          }
-        }
-      ],
-      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna id felis."
-    },
-    {
-      "id": 2,
-      "orderDate": "2018-12-10T13:45:00.000Z",
-      "customerName": "Furkan Bircan",
-      "contact": "+90 5060665233",
-      "transType": "Delivery",
-      "amount": 84,
-      "orderedItems": [
-        {
-          "product": {
-            "id": 1,
-            "foodName": "Beef Stroganoff",
+      "customerName": "adsads",
+      "contact": "adsasd",
+      "transType": "Takeaway",
+      "amount": "0",
+      "orderDate": "2023-08-08T21:43:57.915Z",
+      "message": "adsasd",
+      "orderedItems": {
+        "product": [
+          {
+            "id": 2,
+            "foodName": "Reuben",
             "price": 23,
             "quantity": 1
-          }
-        }
-      ],
-      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna id felis."
-    },
-    {
-      "id": 3,
-      "orderDate": "2018-12-10T13:45:00.000Z",
-      "customerName": "Furkan Bircan",
-      "contact": "+90 5060665233",
-      "transType": "Delivery",
-      "amount": 84,
-      "orderedItems": [
-        {
-          "product": {
-            "id": 1,
-            "foodName": "Beef Stroganoff",
-            "price": 23,
-            "quantity": 2
-          }
-        },
-        {
-          "product": {
-            "id": 2,
-            "foodName": "Reuben",
-            "price": 29,
-            "quantity": 4
-          }
-        }
-      ],
-      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna id felis."
-    },
-    {
-      "id": 4,
-      "orderDate": "2018-12-10T13:45:00.000Z",
-      "customerName": "Furkan Bircan",
-      "contact": "+90 5060665233",
-      "transType": "Delivery",
-      "amount": 84,
-      "orderedItems": [
-        {
-          "product": {
-            "id": 1,
-            "foodName": "Beef Stroganoff",
-            "price": 23,
-            "quantity": 2
-          }
-        },
-        {
-          "product": {
-            "id": 2,
-            "foodName": "Reuben",
-            "price": 29,
-            "quantity": 2
-          }
-        },
-        {
-          "product": {
+          },
+          {
             "id": 3,
             "foodName": "Sandwich",
             "price": 29,
             "quantity": 1
+          },
+          {
+            "id": 5,
+            "foodName": "French Fries",
+            "price": 29,
+            "quantity": 1
           }
-        }
-      ],
-      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna id felis."
+        ]
+      },
+      "id": 3
     }
   ],
   "products": [

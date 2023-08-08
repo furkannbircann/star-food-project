@@ -28,7 +28,7 @@
             </div>
           </div>
         </div>
-        <form [formGroup]="createOrderForm" (ngSubmit)="saveOrder()"> <!--  #createOrderForm="ngForm" (ngSubmit)="saveOrder(createOrderForm.value)" -->
+        <form [formGroup]="createOrderForm">
           <div class="row my-3">
             <div class="col-12">
               <label for="name" class="form-label">Name</label>
@@ -58,29 +58,36 @@
           <div class="row mt-3">
             <div class="col-12 d-flex flex-column">
               <label for="orderitems" class="form-label">Order Items</label>
-              <mat-form-field formGroupName="foods">
+              <mat-form-field formGroupName="orderedItems">
                 <mat-label>Pending</mat-label>
-                <mat-select [(ngModel)]="selectedFormItems" name="selectedItems" multiple formControlName="food">
+                <mat-select [(ngModel)]="selectedFormItems" name="selectedItems" multiple  formControlName="product">
                   <mat-option *ngFor="let product of productsData" [value]="product">{{product.foodName}}</mat-option>
                 </mat-select>
               </mat-form-field>
             </div>
-            <div class="col-12" >
-              <table class="table table-borderless selected-items" formGroupName="foods">
-                <tbody>
-                  <tr *ngFor="let item of selectedFormItems">
+            <div class="col-12">
+              <table class="table table-borderless selected-items">
+                <tbody >
+                  <tr *ngFor="let item of selectedFormItems" >
                     <th scope="row" colspan="5" class="text-start">{{item.foodName}}</th>
                     <td scope="col" class="text-end">{{item.price | currency:'USD':true:'1.0-0'}}</td> <!--yada $-->
-                    <td scope="col" class="text-end"><input type="number" min="1" placeholder="1" formControlName="quantity">
+                    <td scope="col" class="text-end"><select #quantitySelect (change)="changeQuantity(item,quantitySelect.value)" >
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                    </select>
                     </td>
+                    <td scope="col" class="text-end">{{item.price | currency:'USD':true:'1.0-0'}}</td>
                     <td scope="col" class="text-end"><button type="button" class="btn-close" aria-label="Close"
-                        (click)="removeFromSelectedItems(item.id)"></button></td>
+                        (click)="removeFromSelectedItems(item)"></button></td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary">Place an Order</button>
         </form>
       </div>
     </div>
@@ -104,8 +111,6 @@
                   <tr *ngFor="let item of selectedFormItems">
                     <td scope="row">{{item.foodName}}</td>
                     <td scope="row">
-                      <div>{{clickCounter}}
-                      </div>
                     </td>
                     <td scope="row">{{item.price | currency:'USD':true:'1.0-0'}}</td> <!--yada $-->
                   </tr>
@@ -124,14 +129,19 @@
               </div>
             </div>
             <div class="col-6">
-              <span>29$</span>
+              <div>
+                <div>
+                  <div class="total-price-value">
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-12">
-          asdasd
+        <div class="col-12 d-flex justify-content-md-end">
+          <button type="submit" (click)="addOrder()" class="btn btn-primary">Place an Order</button>
         </div>
       </div>
     </div>

@@ -33,6 +33,15 @@ export class BaseService {
       }),
     });
   }
+  delReq(url: any, dataId: number) {
+    return this.http.delete<any>(this.baseUrlUpdate(url), {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json; charset=utf-8',
+        'Access-Control-Allow-Origin': this.baseUrlUpdate(url),
+      }),
+      body: { id: dataId },
+    });
+  }
 
   baseUrlUpdate(url: string): string {
     return url.startsWith('/') ? this.baseUrl + url : url;

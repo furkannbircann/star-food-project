@@ -1,4 +1,4 @@
 <mat-drawer-container class="example-container">
   <mat-drawer mode="side" [opened]="isSidenavOpen" ><app-sidebar-menu></app-sidebar-menu></mat-drawer>
-  <mat-drawer-content><router-outlet (isSidenavOpenEvent)="setSidenavOpen($event)"></router-outlet></mat-drawer-content>
+  <mat-drawer-content class="overflow-x-hidden"><router-outlet (isSidenavOpenEvent)="setSidenavOpen($event)"></router-outlet></mat-drawer-content>
 </mat-drawer-container>

@@ -7,6 +7,6 @@ export class OrderModel {
   contact!:string;
   transType!: string;
   amount: number = 0;
-  orderedItems!: CartItemModel[];
+  orderedItems!: CartItemModel;
   message?: string = '';
 }

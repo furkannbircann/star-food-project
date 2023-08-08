@@ -4,7 +4,7 @@
       class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start align-items-center align-items-md-start flex-column ">
       <div class="text-center text-md-start">
         <div class="header-info d-flex align-items-center justify-content-center justify-content-md-start">
-          <button (click)="changeSidenavOpen()"><i class='bx bx-menu'></i></button>
+          <i class='bx bx-menu'></i>
           <span>Accepted</span>
         </div>
         <div class="mt-4 header-btn">
@@ -62,8 +62,8 @@
             </div>
             <div
               class="col-12 col-md-10 d-flex gap-3 flex-wrap justify-content-center justify-content-md-start  align-items-center">
-              <ng-container *ngFor="let i of order.orderedItems">
-                <span class="badge text-bg-secondary">{{i.product.foodName+ " X " +i.product.quantity}}</span>
+              <ng-container *ngFor="let i of order.orderedItems.product">
+                  <span class="badge text-bg-secondary">{{i.foodName+ " X " + i.quantity}}</span>
               </ng-container>
             </div>
           </div>
@@ -76,7 +76,7 @@
             </div>
             <div class="col-12 col-md-6 text-center text-md-end move-section">
               <img src="../../../assets/images/svg/printer.svg" class="img-fluid" alt=""><button type="button"
-                class="btn btn-primary">Move to Cooking</button>
+                class="btn btn-primary" (click)="removeOrder(order.id)">Move to Cooking</button>
             </div>
           </div>
         </div>
