@@ -55,3 +55,17 @@
 table.selected-items {
   --bs-table-bg: var(--defaul-color);
 }
+
+.delivery-details table{
+  --bs-table-bg: #F6F6F6;
+  border-radius: 5px;
+}
+
+.total-price{
+  background-color: #F6F6F6;
+}
+
+
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+  margin-left: 16px;
+}

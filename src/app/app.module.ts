@@ -17,7 +17,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { FormsModule } from '@angular/forms';
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    ReactiveFormsModule,
+    MatRadioModule
   ],
   providers: [BaseService],
   bootstrap: [AppComponent],

@@ -28,73 +28,112 @@
             </div>
           </div>
         </div>
-        <div class="row my-3">
-          <div class="col-12">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name">
-          </div>
-          <div class="col-12">
-            <label for="contact" class="form-label">Contact</label>
-            <input type="tel" class="form-control" id="contact">
-          </div>
-        </div>
-        <div class="row">
-          <div class="text-center text-md-start">
-            <label for="" class="form-label">Trans Type</label>
-          </div>
-          <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start">
-            <div class="form-check d-flex align-items-center">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="delivery" checked>
-              <label class="form-check-label" for="delivery">
-                Delivery
-              </label>
+        <form [formGroup]="createOrderForm" (ngSubmit)="saveOrder()"> <!--  #createOrderForm="ngForm" (ngSubmit)="saveOrder(createOrderForm.value)" -->
+          <div class="row my-3">
+            <div class="col-12">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" required formControlName="customerName">
+            </div>
+            <div class="col-12">
+              <label for="contact" class="form-label">Contact</label>
+              <input type="tel" class="form-control" id="contact" required formControlName="contact">
             </div>
           </div>
-          <div class="col-12 col-md-6 d-flex align-items-center justify-content-center justify-content-md-start">
-            <div class="form-check d-flex align-items-center">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="takeaway">
-              <label class="form-check-label" for="takeaway">
-                Takeaway
-              </label>
+          <div class="row">
+            <div class="col-12 text-center text-md-start">
+              <mat-radio-group formControlName="transType" aria-label="Trans Type">
+                <mat-label><h1>Trans Type</h1></mat-label>
+                <mat-radio-button value="Delivery">Delivery</mat-radio-button>
+                <mat-radio-button value="Takeaway">Takeaway</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="col-12 my-3">
+              <label for="textarea" class="form-label">Message to Client</label>
+              <div class="form-floating">
+                <textarea class="form-control" id="textarea" style="height: 140px" formControlName="message"></textarea>
+                <label for="textarea">Message</label>
+              </div>
             </div>
           </div>
-          <div class="col-12 my-3">
-            <label for="textarea" class="form-label">Message to Client</label>
-            <div class="form-floating">
-              <textarea class="form-control" id="textarea" style="height: 140px"></textarea>
-              <label for="textarea">Message</label>
+          <div class="row mt-3">
+            <div class="col-12 d-flex flex-column">
+              <label for="orderitems" class="form-label">Order Items</label>
+              <mat-form-field formGroupName="foods">
+                <mat-label>Pending</mat-label>
+                <mat-select [(ngModel)]="selectedFormItems" name="selectedItems" multiple formControlName="food">
+                  <mat-option *ngFor="let product of productsData" [value]="product">{{product.foodName}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-12" >
+              <table class="table table-borderless selected-items" formGroupName="foods">
+                <tbody>
+                  <tr *ngFor="let item of selectedFormItems">
+                    <th scope="row" colspan="5" class="text-start">{{item.foodName}}</th>
+                    <td scope="col" class="text-end">{{item.price | currency:'USD':true:'1.0-0'}}</td> <!--yada $-->
+                    <td scope="col" class="text-end"><input type="number" min="1" placeholder="1" formControlName="quantity">
+                    </td>
+                    <td scope="col" class="text-end"><button type="button" class="btn-close" aria-label="Close"
+                        (click)="removeFromSelectedItems(item.id)"></button></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-12 d-flex flex-column">
-            <label for="orderitems" class="form-label">Order Items</label>
-            <mat-form-field>
-              <mat-label>Pending</mat-label>
-              <mat-select [(ngModel)]="selectedItems" name="selectedItems" multiple>
-                <mat-option *ngFor="let product of productsData" [value]="product">{{product.foodName}}</mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <div class="col-12">
-            <table class="table table-borderless selected-items">
-              <tr *ngFor="let item of selectedItems">
-                <th scope="row" colspan="5" class="text-start">{{item.foodName}}</th>
-                <td scope="col" class="text-end">{{item.price | currency:'USD':true:'1.0-0'}}</td> <!--yada $-->
-                <td scope="col" class="text-end">
-                  <div>
-                    <i class='bx bx-minus'></i>{{item}}<i class='bx bx-plus'></i>
-                  </div>
-                </td>
-                <td scope="col" class="text-end"><button type="button" [value]="" class="btn-close" aria-label="Close"
-                    (click)="removeFromSelectedItems(item.id)"></button></td>
-              </tr>
-            </table>
+          <button type="submit" class="btn btn-primary">Place an Order</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-12 col-md-5 mt-5 mt-md-0 p-5 p-md-0">
+      <div class="row">
+        <div class="col-12">
+          <div class="delivery-details">
+            <div class="delivery-details-title">
+              <p>Delivery Details</p>
+            </div>
+            <div class="delivery-details-table">
+              <table class="table table-borderless">
+                <thead>
+                  <tr>
+                    <th>Order Item</th>
+                    <th>Number</th>
+                    <th>Cost</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of selectedFormItems">
+                    <td scope="row">{{item.foodName}}</td>
+                    <td scope="row">
+                      <div>{{clickCounter}}
+                      </div>
+                    </td>
+                    <td scope="row">{{item.price | currency:'USD':true:'1.0-0'}}</td> <!--yada $-->
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="col-12 col-md-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="total-price d-flex flex-row align-items-center justify-content-center">
+            <div class="col-6">
+              <div class="total-price-title">
+                <h1>Total Price :</h1>
+              </div>
+            </div>
+            <div class="col-6">
+              <span>29$</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          asdasd
+        </div>
+      </div>
     </div>
   </div>
 </div>

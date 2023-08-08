@@ -12,17 +12,17 @@
           "product": {
             "id": 1,
             "foodName": "Beef Stroganoff",
-            "price": 23
-          },
-          "quantity": 2
+            "price": 23,
+            "quantity": 2
+          }
         },
         {
           "product": {
             "id": 6,
             "foodName": "Caesar Salad",
-            "price": 17
-          },
-          "quantity": 5
+            "price": 17,
+            "quantity": 5
+          }
         }
       ],
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna id felis."
@@ -39,9 +39,9 @@
           "product": {
             "id": 1,
             "foodName": "Beef Stroganoff",
-            "price": 23
-          },
-          "quantity": 1
+            "price": 23,
+            "quantity": 1
+          }
         }
       ],
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna id felis."
@@ -58,17 +58,17 @@
           "product": {
             "id": 1,
             "foodName": "Beef Stroganoff",
-            "price": 23
-          },
-          "quantity": 2
+            "price": 23,
+            "quantity": 2
+          }
         },
         {
           "product": {
             "id": 2,
             "foodName": "Reuben",
-            "price": 29
-          },
-          "quantity": 4
+            "price": 29,
+            "quantity": 4
+          }
         }
       ],
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna id felis."
@@ -85,25 +85,25 @@
           "product": {
             "id": 1,
             "foodName": "Beef Stroganoff",
-            "price": 23
-          },
-          "quantity": 2
+            "price": 23,
+            "quantity": 2
+          }
         },
         {
           "product": {
             "id": 2,
             "foodName": "Reuben",
-            "price": 29
-          },
-          "quantity": 3
+            "price": 29,
+            "quantity": 2
+          }
         },
         {
           "product": {
             "id": 3,
             "foodName": "Sandwich",
-            "price": 29
-          },
-          "quantity": 1
+            "price": 29,
+            "quantity": 1
+          }
         }
       ],
       "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna id felis."
