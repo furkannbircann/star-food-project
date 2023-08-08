@@ -1,5 +1,10 @@
 # Star Food
 
+Start JSON Server
+
+npx json-server --watch api/db.json
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
 
 ## Development server
